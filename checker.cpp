@@ -28,12 +28,27 @@ bool checkTemperature(float temperature)
 
 bool checkStateOfCharge(float soc)
 {
-  return minBoundaryCheck(soc,20) && maxBoundaryCheck(soc,80) ;
+  if(!minBoundaryCheck(soc,20))
+  {
+    printWarning("State of charge is low");
+    return false;
+  }
+  if(!maxBoundaryCheck(soc,80))
+  {
+    printWarning("State of charge is High");
+    return false;
+  }
+  return true;
 }
 
 bool checkChargeRate(float chargeRate)
 {
-  return maxBoundaryCheck(chargeRate,0.8);
+  if(! maxBoundaryCheck(chargeRate,0.8))
+  {
+    printWarning("Charge rate is High");
+    return false;
+  }
+  return true;
 }
 
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
