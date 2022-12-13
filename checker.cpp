@@ -3,15 +3,27 @@
 using namespace std;
 
 
-bool minBoundaryCheck(float value,float min){
+bool minBoundaryCheck(float value,float min) {
   return !(value < min); 
 }
-bool maxBoundaryCheck(float value,float max){
+bool maxBoundaryCheck(float value,float max) {
   return !(value > max);
+}
+void printWarning(string message) {
+  cout<<message<<endl;
 }
 bool checkTemperature(float temperature)
 {
-  return minBoundaryCheck(temperature,0) && maxBoundaryCheck(temperature,45) ;
+  if( !minBoundaryCheck(temperature,0)) {
+    printWarning("Temperature is low");
+    return false;
+  }
+  
+  if( !maxBoundaryCheck(temperature,45)) {
+    printWarning("Temperature is High");
+    return false;
+  }
+  return true;
 }
 
 bool checkStateOfCharge(float soc)
@@ -27,6 +39,7 @@ bool checkChargeRate(float chargeRate)
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   return (checkTemperature(temperature) && checkStateOfCharge(soc) && checkChargeRate(chargeRate));
 }
+
 
 
 int main() {
