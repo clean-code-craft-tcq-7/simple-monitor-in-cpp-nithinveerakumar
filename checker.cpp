@@ -25,10 +25,7 @@ bool checkChargeRate(float chargeRate)
 }
 
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
-  if((checkTemperature(temperature) && checkStateOfCharge(soc) && checkChargeRate(chargeRate))) {
-    return true;
-  } 
-  return false;
+  return (checkTemperature(temperature) && checkStateOfCharge(soc) && checkChargeRate(chargeRate));
 }
 
 
