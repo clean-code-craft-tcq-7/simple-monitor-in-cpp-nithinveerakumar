@@ -20,14 +20,14 @@ class SOC : public BMS {
    cout<<lang->getSOCLowBreachMessage()<<endl;
    return true;
  }
- return false;
+ return isThresholdMin();
 }
  bool isMax(){
   if(soc >= socMaxLimit){
    cout<<lang->getSOCHighBreachMessage()<<endl;
    return true;
   }
- return false;
+ return  isThresholdMax();
  }
  bool isThresholdMin()
  {
@@ -50,7 +50,7 @@ class SOC : public BMS {
   this->soc = soc;
  }
  bool isOk(){
-  if (isMin() || isThresholdMin() || isMax() || isThresholdMax())
+  if (isMin() || isMax())
     return false;
   cout<<"SOC is Normal"<<endl;
   return true;

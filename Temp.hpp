@@ -16,14 +16,14 @@ class Temperature : public BMS{
    cout<<lang->getTempLowBreachMessage()<<endl;
    return true;
  }
- return false;
+ return isThresholdMin();
 }
  bool isMax(){
   if(temperature >= tempMaxLimit){
    cout<<lang->getTempHighBreachMessage()<<endl;
    return true;
   }
- return false;
+ return isThresholdMax();
  }
  bool isThresholdMin()
  {
@@ -46,7 +46,7 @@ class Temperature : public BMS{
   temperature = temp;
  }
  bool isOk(){
-  if (isMin() || isThresholdMin() || isMax() || isThresholdMax())
+  if (isMin() || isMax())
     return false;
   cout<<"Temperature is Normal"<<endl;
   return true;

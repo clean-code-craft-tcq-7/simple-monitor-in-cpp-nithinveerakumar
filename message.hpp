@@ -45,40 +45,40 @@ class Message
 class German : public Message
 {
     string getTempLowBreachMessage(){
-        return "GTemperature low breach";
+        return "Temperaturbruch";
     }
     string getTempHighBreachMessage(){
-        return "GTemperature high breach";
+        return "Hohe Temperaturbruch";
     }
     string getTempLowWarningMessage(){
-        return "GTemperature low warning";
+        return "Warnung vor niedriger Temperatur";
     }
     string getTempHighWarningMessage(){
-        return "GTemperature High warning";
+        return "Warnung zu hoher Temperatur";
     }
     string getSOCLowBreachMessage(){
-        return "G SOC low breach";
+        return "SOC-Unterschreitung";
     }
     string getSOCHighBreachMessage(){
-        return "G SOC high breach";
+        return "SOC-Überschreitung";
     }
     string getSOCLowWarningMessage(){
-        return "G SOC low warning";
+        return "SOC-Niedrig-Warnung";
     }
     string getSOCHighWarningMessage(){
-        return "G SOC High warning";
+        return "SOC High-Warnung";
     }
     string getCRLowBreachMessage(){
-        return "GCharge rate low breach";
+        return "Durchbruch bei niedriger Laderate";
     }
     string getCRHighBreachMessage(){
-        return "GCharge rate high breach";
+        return "Hohe Verletzung der Laderate";
     }
     string getCRLowWarningMessage(){
-        return "GCharge rate low warning";
+        return "Warnung zu niedrigem Ladestrom";
     }
     string getCRHighWarningMessage(){
-        return "GCharge rate High warning";
+        return "Laderate Hoch Warnung";
     }
 
 };

@@ -20,14 +20,14 @@ class ChargeRate : public BMS {
    cout<<lang->getCRLowBreachMessage()<<endl;
    return true;
  }
- return false;
+ return isThresholdMin();
 }
  bool isMax(){
   if(cr >= crMaxLimit){
    cout<<lang->getCRHighBreachMessage()<<endl;
    return true;
   }
- return false;
+ return isThresholdMax();
  }
  bool isThresholdMin()
  {
@@ -50,7 +50,7 @@ class ChargeRate : public BMS {
   this->cr = cr;
  }
  bool isOk(){
-  if (isMin() || isThresholdMin() || isMax() || isThresholdMax())
+  if (isMin() || isMax())
     return false;
   cout<<"ChargeRate is Normal"<<endl;
   return true;
